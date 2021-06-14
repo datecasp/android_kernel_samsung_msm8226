@@ -4,7 +4,7 @@
 # setting - SPI can't be modular so that case doesn't need to be covered.
 config SND_SOC_I2C_AND_SPI
 	tristate
-	default m if I2C=m
+	default n if I2C=n
 	default y if I2C=y
 	default y if SPI_MASTER=y
 
@@ -127,7 +127,7 @@ config SND_SOC_88PM860X
 config SND_SOC_WM_HUBS
 	tristate
 	default y if SND_SOC_WM8993=y || SND_SOC_WM8994=y
-	default m if SND_SOC_WM8993=m || SND_SOC_WM8994=m
+	default n if SND_SOC_WM8993=n || SND_SOC_WM8994=n
 
 config SND_SOC_AC97_CODEC
 	tristate
@@ -259,7 +259,7 @@ config SND_SOC_MAXIM_DSM
 config SND_SOC_MAXIM_DSM_CAL
 	tristate "Support MAXIM DSM Calibration"
 	default y if SND_SOC_MAX98506=y
-	default m if SND_SOC_MAX98506=m
+	default n if SND_SOC_MAX98506=n
 	help
 	MAX9850x Calibration Driver
 
